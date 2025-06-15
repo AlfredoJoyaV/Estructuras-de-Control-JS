@@ -323,3 +323,94 @@ btnEjercicio6.addEventListener('click', () => {
   document.getElementById('resultadoDescuento').textContent = `Descuento aplicado: ${(descuento * 100).toFixed(2)}%`;
   document.getElementById('resultadoTotalAPagar').textContent = `Total a pagar: $ ${totalAPagar.toFixed(2)}`;
 });
+
+//Hacemos el ejercicio 7
+const ejercicio7Content = `
+<div class="ejercicio7">
+  <h1 id="titulo7">EJERCICIO 7:</h1>
+  <p>Se realiza la carga de 10 valores enteros por teclado. Se desea conocer:</p>
+  <ul>
+    <li>La cantidad de valores negativos ingresados</li>
+    <li>La cantidad de valores positivos ingresados</li>
+    <li>La cantidad de múltiplos de 15</li>
+    <li>El valor acumulado de los números ingresados que son pares</li>
+  </ul>
+  <input type="number" id="numero" placeholder="Ingrese un número entero">
+  <button id="btn-ejercicio7">Agregar Número</button>
+  <p id="resultado-ejercicio7"></p>
+  <div class="resultado-numeros">
+    <p id="resultadoCantidadNegativos"></p>
+    <p id="resultadoCantidadPositivos"></p>
+    <p id="resultadoCantidadMultiplos15"></p>
+    <p id="resultadoAcumuladoPares"></p>
+</div>
+`;
+// Crear el contenedor del ejercicio 7 y agregarlo al DOM
+const ejercicio7Container = document.createElement('div');
+ejercicio7Container.innerHTML = ejercicio7Content;
+app.appendChild(ejercicio7Container);
+// Variables para almacenar los resultados
+let cantidadNegativos = 0;
+let cantidadPositivos = 0;
+let cantidadMultiplos15 = 0;
+let acumuladoPares = 0;
+// Contador para los números ingresados
+let contadorNumeros = 0;
+// Agregar el evento al botón del ejercicio 7
+const btnEjercicio7 = document.getElementById('btn-ejercicio7');
+btnEjercicio7.addEventListener('click', () => {
+  // Si ya se ingresaron 10 números, no permitir más cargas
+  if (contadorNumeros >= 10) {
+    document.getElementById('resultado-ejercicio7').textContent = "Su carga ha finalizado.";
+    btnEjercicio7.disabled = true; // Deshabilita el botón
+    return;
+  }
+  
+  const numero = parseInt(document.getElementById('numero').value);
+
+  // Validamos que el campo no este vacio
+  if (document.getElementById('numero').value === "") {
+    document.getElementById('resultado-ejercicio7').textContent = "Por favor, ingresa un número.";
+    return;
+  }
+
+  // Validamos que sea un numero entero
+  if (!Number.isInteger(numero)) {
+    document.getElementById('resultado-ejercicio7').textContent = "Solo se permiten números enteros";
+    return;
+  }
+
+  // Incrementar el contador de números ingresados
+  contadorNumeros++;
+
+  // Validamos si el numero es negativo, positivo o múltiplo de 15
+  if (numero < 0) {
+    cantidadNegativos++;
+  } else if (numero > 0) {
+    cantidadPositivos++;
+  }
+
+  if (numero % 15 === 0) {
+    cantidadMultiplos15++;
+  }
+
+  // Verificar si el número es par
+  if (numero % 2 === 0) {
+    acumuladoPares += numero;
+  }
+
+  // Mostrar los resultados
+  document.getElementById('resultadoCantidadNegativos').textContent = `Cantidad de valores negativos: ${cantidadNegativos}`;
+  document.getElementById('resultadoCantidadPositivos').textContent = `Cantidad de valores positivos: ${cantidadPositivos}`;
+  document.getElementById('resultadoCantidadMultiplos15').textContent = `Cantidad de múltiplos de 15: ${cantidadMultiplos15}`;
+  document.getElementById('resultadoAcumuladoPares').textContent = `Valor acumulado de números pares: ${acumuladoPares}`;
+
+  // Limpiar el campo de entrada
+  document.getElementById('numero').value = '';
+
+  // Si ya se ingresaron 10 números, mostrar mensaje y deshabilitar botón
+  if (contadorNumeros >= 10) {
+    document.getElementById('resultado-ejercicio7').textContent = "Su carga ha finalizado.";
+    btnEjercicio7.disabled = true;
+  }
+});
