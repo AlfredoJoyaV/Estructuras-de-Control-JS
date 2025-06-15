@@ -214,3 +214,51 @@ btnEjercicio4.addEventListener('click', () => {
   document.getElementById('resultadoNumeroMayor').textContent = `El número mayor es: ${numeroMayor}`;
 });
 
+//Hacemos el ejercicio 5
+const ejercicio5Content = `
+<div class="ejercicio5">
+  <h1 id="titulo5">EJERCICIO 5:</h1>
+  <p>Realizar una función para una tienda de coches en donde se deberá calcular: Si el coche a la venta
+  es un FORD FIESTA, aplicar un 5% de descuento en la compra. Si el coche a la venta es un FORD FOCUS, 
+  el descuento será del 10% y si es un FORD ESCAPE el descuento será del 20%. Mostrar en html el coche 
+  seleccionado y el descuento que se aplicara en base a lo que selecciono el usuario.</p>
+  <p>El precio original del coche es de $10,000.00</p>
+  <select id="cocheSeleccionado">
+    <option value="Ford Fiesta">FORD FIESTA</option>
+    <option value="Ford Focus">FORD FOCUS</option>
+    <option value="Ford Escape">FORD ESCAPE</option>
+  </select>
+  <button id="btn-ejercicio5">Calcular total a pagar</button>
+  <p id="resultado-ejercicio5"></p>
+</div>
+`;
+// Crear el contenedor del ejercicio 5 y agregarlo al DOM
+const ejercicio5Container = document.createElement('div');
+ejercicio5Container.innerHTML = ejercicio5Content;
+app.appendChild(ejercicio5Container);
+
+// Agregar el evento al botón del ejercicio 5
+const btnEjercicio5 = document.getElementById('btn-ejercicio5');
+btnEjercicio5.addEventListener('click', () => {
+  const cocheSeleccionado = document.getElementById('cocheSeleccionado').value;
+
+  let descuento = 0;
+  switch (cocheSeleccionado) {
+    case 'Ford Fiesta':
+      descuento = 0.05;
+      break;
+    case 'Ford Focus':
+      descuento = 0.1;
+      break;
+    case 'Ford Escape':
+      descuento = 0.2;
+      break;
+  }
+
+  const precioOriginal = 10000
+  const totalAPagar = precioOriginal - (precioOriginal * descuento);
+
+  // Mostrar el resultado
+  document.getElementById('resultado-ejercicio5').textContent = `El total a pagar por el coche ${cocheSeleccionado} es: $ ${totalAPagar.toLocaleString('en-US', { minimumFractionDigits: 2})}`;
+});
+
