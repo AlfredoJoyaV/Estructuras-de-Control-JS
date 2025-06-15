@@ -1,9 +1,10 @@
+/*Reseteamos los valores predeterminados de la pagina*/
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
+/* Le damos estilo a nuestro container del ejercicio 1*/
 div .ejercicio1 {
   padding: 2rem;
   border: 1px solid #ccc;
@@ -15,9 +16,9 @@ div .ejercicio1 {
   font-size: 1.2rem;
   display: flex;
   flex-direction: column;
-  
-  
+  align-items: center;
 }
+/*Le damos la forma a nuestro input*/
 div .ejercicio1 input {
   margin: 10px 0;
   width:  300px;
@@ -28,7 +29,7 @@ div .ejercicio1 input {
   border: none;
   border-radius: 10px;
 }
-
+/*Le damos forma a nuestro button*/
 div .ejercicio1 button{
   margin: 10px 0;
   width:  300px;
@@ -40,10 +41,63 @@ div .ejercicio1 button{
   border: none;
   border-radius: 10px;
 }
-
+/*A nuestro button le damos un efecto hover y active*/
 div .ejercicio1 button:hover {
   background-color: #217dbb;
   color: #e0e0e0;
   transform: scale(1.07);
   box-shadow: 0 4px 16px rgba(52, 152, 219, 0.3);
+}
+div .ejercicio1 button:active {
+  background-color: #000000;
+  transform: scale(0.90);
+}
+/*Le damos estilo a nuestro container del ejercicio 1*/
+div .ejercicio2 {
+  padding: 2rem;
+  border: 1px solid #ccc;
+  margin: 10px;
+  border-radius: 8px;
+  background-color: #18a8cc;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/*Le damos la forma a nuestro input*/
+div .ejercicio2 input {
+  margin: 5px 0;
+  width:  300px;
+  height: 40px;
+  font-size: 1rem;
+  padding: 8px 8px;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+}
+/*Le damos forma al button del ejercicio 2*/
+div .ejercicio2 button {
+  margin: 10px 0;
+  width:  300px;
+  height: 40px;
+  font-size: 1rem;
+  padding: 8px 8px;
+  text-align: center;
+  background-color: #010101;
+  color: #e0e0e0;
+  border: none;
+  border-radius: 10px;
+}
+/*A nuestro button del ejercicio 2 le damos un efecto hover y active*/
+div .ejercicio2 button:hover {
+  background-color: #217dbb;
+  color: #e0e0e0;
+  transform: scale(1.07);
+  box-shadow: 0 4px 16px rgba(52, 152, 219, 0.3);
+}
+div .ejercicio2 button:active {
+  background-color: #256029;
+  transform: scale(0.90);
 }
