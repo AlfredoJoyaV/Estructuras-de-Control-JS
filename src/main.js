@@ -262,3 +262,64 @@ btnEjercicio5.addEventListener('click', () => {
   document.getElementById('resultado-ejercicio5').textContent = `El total a pagar por el coche ${cocheSeleccionado} es: $ ${totalAPagar.toLocaleString('en-US', { minimumFractionDigits: 2})}`;
 });
 
+//Hacemos el ejercicio 6
+const ejercicio6Content = `
+<div class="ejercicio6">
+  <h1 id="titulo6">EJERCICIO 6:</h1>
+  <p>Crear una Función para calcular el descuento en viajes turísticos tomando en cuenta lo siguiente:</p>
+  <P>Si el usuario introduce como origen la ciudad de Palma y como destino La costa del Sol, el descuento 
+  será de 5%, si el destino es Panchimalco el descuento será del 10% y si el destino es Puerto el Triunfo 
+  el descuento será del 15%.</P>
+  <p>El precio del viaje es de $100.00</p>
+  <select id="origen">
+    <option value="La Palma">La Palma</option>
+    <option value="La Libertad">La Libertad</option>
+    <option value="Usulutan">Usulutan</option>
+    <option value="Santa Elena">Santa Elena</option>
+    <option value="Santa Maria">Santa Maria</option>
+  </select>
+  <select id="destino">
+    <option value="La Costa del Sol">La Costa del Sol</option>
+    <option value="Panchimalco">Panchimalco</option>
+    <option value="Puerto el Triunfo">Puerto el Triunfo</option>
+    <option value="Santa Ana">Santa Ana</option>
+    <option value="San Miguel">San Miguel</option>
+  </select>
+  <button id="btn-ejercicio6">Calcular Descuento</button>
+  <p id="resultado-ejercicio6"></p>
+  <div class="resultado-viaje">
+    <p id="resultadoOrigen"></p>
+    <p id="resultadoDestino"></p>
+    <p id="resultadoDescuento"></p>
+    <p id="resultadoTotalAPagar"></p>
+</div>
+`;
+// Crear el contenedor del ejercicio 6 y agregarlo al DOM
+const ejercicio6Container = document.createElement('div');
+ejercicio6Container.innerHTML = ejercicio6Content;
+app.appendChild(ejercicio6Container);
+
+// Agregar el evento al botón del ejercicio 6
+const btnEjercicio6 = document.getElementById('btn-ejercicio6');
+btnEjercicio6.addEventListener('click', () => {
+  const origen = document.getElementById('origen').value;
+  const destino = document.getElementById('destino').value;
+
+  let descuento = 0;
+  if (origen === 'La Palma' && destino === 'La Costa del Sol') {
+    descuento = 0.05;
+  } else if (origen === 'La Palma' && destino === 'Panchimalco') {
+    descuento = 0.1;
+  } else if (origen === 'La Palma' && destino === 'Puerto el Triunfo') {
+    descuento = 0.15;
+  }
+
+  const precioViaje = 100;
+  const totalAPagar = precioViaje - (precioViaje * descuento);
+
+  // Mostrar el resultado
+  document.getElementById('resultadoOrigen').textContent = `Origen: ${origen}`;
+  document.getElementById('resultadoDestino').textContent = `Destino: ${destino}`;
+  document.getElementById('resultadoDescuento').textContent = `Descuento aplicado: ${(descuento * 100).toFixed(2)}%`;
+  document.getElementById('resultadoTotalAPagar').textContent = `Total a pagar: $ ${totalAPagar.toFixed(2)}`;
+});
