@@ -514,5 +514,3 @@ btnEjercicio9.addEventListener('click', () => {
   document.getElementById('resultadoTemperaturaFahrenheit').textContent = `Temperatura en Fahrenheit: ${temperaturaFahrenheit.toFixed(2)}°F`;
   document.getElementById('resultadoRangoTemperatura').textContent = `Rango de temperatura: ${rangoTemperatura}`;
 });
-
-
