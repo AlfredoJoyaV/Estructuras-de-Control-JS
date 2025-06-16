@@ -5,7 +5,7 @@ const app = document.getElementById('app')
 //Hacemos el ejercicio 1
 const ejercicio1Content = `
 <div class="ejercicio1">
-  <h1>EJERCICIO 1:</h1>
+  <h1 id="titulo1">EJERCICIO 1:</h1>
   <p> Crear una función que en base a la edad que ingreso el usuario devolver un mensaje si la persona es mayor de edad o no. Utilizar para la condición el operador ternario</p>
   <input type="number" id="edad" placeholder="Ingrese tu edad">
   <button id="btn-ejercicio1">Calcular</button>
@@ -38,7 +38,7 @@ btnEjercicio1.addEventListener('click', () => {
 //Hacemos el ejercicio 2
 const ejercicio2Content = `
 <div class="ejercicio2">
-  <h1>EJERCICIO 2:</h1>
+  <h1 id="titulo2">EJERCICIO 2:</h1>
   <p>Crear una función que determine la nota final de un alumno, la cual depende de lo siguiente:</p>
   <ul>
     <li>Examen = 20%</li>
@@ -100,7 +100,7 @@ btnEjercicio2.addEventListener('click', () => {
 //Hacemos el ejercicio 3
 const ejercicio3Content = `
 <div class="ejercicio3">
-  <h1>EJERCICIO 3:</h1>
+  <h1 id="titulo3">EJERCICIO 3:</h1>
   <p>Calcular el aumento de trabajador tomando en cuenta la tabla de categorías de aumento.
   Para este ejercicio deberá de asignar las siguientes variables: nombre, salario, categoría y aumento. 
   Deberá demostrar los datos del empleado y el aumento salarial.
@@ -174,7 +174,7 @@ btnEjercicio3.addEventListener('click', () => {
 //Hacemos el ejercicio 4
 const ejercicio4Content = `
 <div class="ejercicio4">
-  <h1>EJERCICIO 4:</h1>
+  <h1 id="titulo4">EJERCICIO 4:</h1>
   <p>Crear una función que en base a 2 números enteros que ingrese el usuario, calcular cual número es el mayor y devolverlo.</p>
   <input type="number" id="numero1" step="1" placeholder="Ingrese el primer número">
   <input type="number" id="numero2" step="1" placeholder="Ingrese el segundo número">
@@ -217,7 +217,7 @@ btnEjercicio4.addEventListener('click', () => {
 //Hacemos el ejercicio 5
 const ejercicio5Content = `
 <div class="ejercicio5">
-  <h1>EJERCICIO 5:</h1>
+  <h1 id="titulo5">EJERCICIO 5:</h1>
   <p>Realizar una función para una tienda de coches en donde se deberá calcular: Si el coche a la venta
   es un FORD FIESTA, aplicar un 5% de descuento en la compra. Si el coche a la venta es un FORD FOCUS, 
   el descuento será del 10% y si es un FORD ESCAPE el descuento será del 20%. Mostrar en html el coche 
@@ -265,7 +265,7 @@ btnEjercicio5.addEventListener('click', () => {
 //Hacemos el ejercicio 6
 const ejercicio6Content = `
 <div class="ejercicio6">
-  <h1>EJERCICIO 6:</h1>
+  <h1 id="titulo6">EJERCICIO 6:</h1>
   <p>Crear una Función para calcular el descuento en viajes turísticos tomando en cuenta lo siguiente:</p>
   <P>Si el usuario introduce como origen la ciudad de Palma y como destino La costa del Sol, el descuento 
   será de 5%, si el destino es Panchimalco el descuento será del 10% y si el destino es Puerto el Triunfo 
@@ -327,7 +327,7 @@ btnEjercicio6.addEventListener('click', () => {
 //Hacemos el ejercicio 7
 const ejercicio7Content = `
 <div class="ejercicio7">
-  <h1>EJERCICIO 7:</h1>
+  <h1 id="titulo7">EJERCICIO 7:</h1>
   <p>Se realiza la carga de 10 valores enteros por teclado. Se desea conocer:</p>
   <ul>
     <li>La cantidad de valores negativos ingresados</li>
@@ -365,7 +365,7 @@ btnEjercicio7.addEventListener('click', () => {
     btnEjercicio7.disabled = true; // Deshabilita el botón
     return;
   }
-
+  
   const numero = parseInt(document.getElementById('numero').value);
 
   // Validamos que el campo no este vacio
@@ -414,7 +414,6 @@ btnEjercicio7.addEventListener('click', () => {
     btnEjercicio7.disabled = true;
   }
 });
-
 //Hacemos el ejercicio 8
 const ejercicio8Content = `
 <div class="ejercicio8">
@@ -453,6 +452,7 @@ btnEjercicio8.addEventListener('click', () => {
 
   document.getElementById('resultado-ejercicio8').innerHTML = resultado;
 });
+
 //Hacemos el ejercicio 9
 const ejercicio9Content = `
 <div class="ejercicio9">
@@ -514,3 +514,5 @@ btnEjercicio9.addEventListener('click', () => {
   document.getElementById('resultadoTemperaturaFahrenheit').textContent = `Temperatura en Fahrenheit: ${temperaturaFahrenheit.toFixed(2)}°F`;
   document.getElementById('resultadoRangoTemperatura').textContent = `Rango de temperatura: ${rangoTemperatura}`;
 });
+
+
